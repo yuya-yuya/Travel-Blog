@@ -19,4 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/users/update/{id}', 'UserController@update');
+
 Route::get('/users/{id}', 'UserController@show');
+
+Route::get('/users/{id}/edit', 'UserController@edit');
+
+
+
