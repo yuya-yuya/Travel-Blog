@@ -1,3 +1,27 @@
+タイトル「転・点・展」
+
+これはたくさんの人がそれぞれの旅の思い出をシェアすることができるサイトである。昨今、TwitterやInstagramなどのSNSが人気を博しているが、そこでは旅に限らず、日常の風景や雑談、芸能ネタなど様々なトピックで溢れている。このサイトではあくまで「旅」にフォーカスを当てて、人々の思い出や豆知識をシェアしてもらいたいと考える。
+タイトルも紐解くと、「転」は様々な土地を転々とする、「点」は人を点と見て、それぞれの点が繋がって欲しいという思い、「展」はそれぞれの思い出などを展示、共有して欲しいという思いから命名。
+
+Features
+
+<img width="864" alt="スクリーンショット 2021-05-20 4 11 06" src="https://user-images.githubusercontent.com/68839987/118870395-79980f80-b921-11eb-9b7b-85e21f7ee627.png">
+
+Dependency
+
+- PHP (>= 7.0)
+- Laravel 6.0
+- MySQL
+- React
+- Bootstrap
+- Heroku
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
