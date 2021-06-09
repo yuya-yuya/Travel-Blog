@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\UserController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,9 +23,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/users/update/{id}', 'UserController@update')->middleware('auth');
 
+Route::post('users/{id}/withdraw', 'UserController@withdraw')->middleware('auth');
+
 Route::get('/users/{id}', 'UserController@show');
 
 Route::get('/users/{id}/edit', 'UserController@edit')->middleware('auth');
+
+Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe')->middleware('auth');
+
 
 
 

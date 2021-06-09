@@ -29,4 +29,16 @@ class UserController extends Controller
        
         return redirect()->back()->with(['message' => '更新しました！']);
     }
+
+    public function unsubscribe(){
+        $user = Auth::user();
+
+        return view('users.unsubscribe', ['user' => $user]);
+    }
+
+    public function withdraw($request){
+        $user = Auth::user();
+        $user->delete();
+        return redirect('/login');
+    }
 }
