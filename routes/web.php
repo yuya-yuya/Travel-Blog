@@ -21,9 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/users/update/{id}', 'UserController@update')->middleware('auth');
+Route::post('/users/update/{id}', 'UserController@update')->middleware('auth')->name('users.update');
 
-Route::post('users/{id}/withdraw', 'UserController@withdraw')->middleware('auth');
+Route::post('users/{id}/withdraw', 'UserController@withdraw')->middleware('auth')->name('users.withdraw');
 
 Route::get('/users/{id}', 'UserController@show');
 
