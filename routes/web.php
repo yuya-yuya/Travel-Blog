@@ -21,16 +21,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/users/update/{id}', 'UserController@update')->middleware('auth')->name('users.update');
-
-Route::post('users/{id}/withdraw', 'UserController@withdraw')->middleware('auth')->name('users.withdraw');
-
 Route::get('/users/{id}', 'UserController@show');
 
-Route::get('/users/{id}/edit', 'UserController@edit')->middleware('auth');
-
-Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe')->middleware('auth');
-
+Route::middleware('auth')->group(function () {
+    Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
+    Route::post('users/{id}/withdraw', 'UserController@withdraw')->name('users.withdraw');
+    Route::get('/users/{id}/edit', 'UserController@edit');
+    Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe');
+});
 
 
 
