@@ -30,5 +30,6 @@ Route::middleware('auth')->group(function () {
     Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe');
 });
 
+Route::get('/posts', 'PostController@index');
 
 
