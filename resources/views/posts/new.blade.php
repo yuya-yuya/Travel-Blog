@@ -1,3 +1,9 @@
+@if(Session::has('message'))
+  <div>{{ Session::get('message') }}</div>
+@endif
+@foreach($errors->all() as $message)
+  <div>{{ $message }}</div>
+@endforeach
 <form method="post" action="{{ route('posts.create') }}">
   @csrf
   <div>

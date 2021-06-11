@@ -25,6 +25,10 @@ class PostController extends Controller
     }
 
     public function create(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
         $post = new Post;
         $post->fill($request->all());
         $post->user()->associate(Auth::user()); 

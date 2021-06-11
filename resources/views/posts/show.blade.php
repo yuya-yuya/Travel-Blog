@@ -1,1 +1,1 @@
-{{ $post -> body }}
+{{ $post -> title }}
