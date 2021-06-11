@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -18,4 +19,25 @@ class PostController extends Controller
 
         return view('posts.show', ['post' => $post]);
     }
+
+    public function new(){
+        return view('posts.new');
+    }
+
+    public function create(Request $request){
+        $post = new Post;
+        $post->fill($request->all());
+        $post->user()->associate(Auth::user()); 
+        $post->save();
+
+        return redirect()->to('/posts'); 
+    }
+
+    public function delete($id){
+        $post = Post::find($id);
+        $post -> delete();
+        
+        return redirect()->to('/posts'); 
+    }
 }
+

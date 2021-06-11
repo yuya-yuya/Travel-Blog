@@ -31,7 +31,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/posts', 'PostController@index');
-Route::get('/posts/{id}', 'PostController@show');
+// showを追加する
+Route::middleware('auth')->group(function () {
+    Route::get('/posts/new', 'PostController@new');
+    Route::post('/posts/create', 'PostController@create')->name('posts.create');
+    Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
+});
 
 
 
