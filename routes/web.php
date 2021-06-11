@@ -31,7 +31,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/posts', 'PostController@index');
-// showを追加する
+Route::get('/posts/{id}', 'PostController@show');
+// showと投稿のバリデーション
 Route::middleware('auth')->group(function () {
     Route::get('/posts/new', 'PostController@new');
     Route::post('/posts/create', 'PostController@create')->name('posts.create');

@@ -2,7 +2,9 @@
   @foreach($posts as $post)
     <li>
       {{ $post->user->name }}<br>
-      {{ $post ->title}}<br>
+      <a href="{{ action('PostController@show', $post->id) }}">
+        {{ $post ->title}}
+      </a><br>
       {{ $post->body }}
       <form method="POST" action="{{ route('posts.delete', ['id' => $post->id]) }}">
         @csrf
