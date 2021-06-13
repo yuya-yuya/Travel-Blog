@@ -22,6 +22,14 @@
       @endforeach
     </select>
   </div>
+  <div>
+    <label for="genre_id">ジャンル名</label><br>
+    <select name="genre_id">
+      @foreach($genres as $genre)
+        <option value="{{ $genre->id }}">{{ $genre->name }}<option>
+      @endforeach
+    </select>
+  </div>
   <button type="submit">投稿</button>
 </form>
 

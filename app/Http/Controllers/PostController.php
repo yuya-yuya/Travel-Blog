@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Cityname;
+use App\Models\Genre;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -23,8 +24,9 @@ class PostController extends Controller
 
     public function new(){
         $citynames = Cityname::all();
+        $genres = Genre::all();
         
-        return view('posts.new', ['citynames' => $citynames]);
+        return view('posts.new', ['citynames' => $citynames, 'genres' => $genres]);
     }
 
     public function create(Request $request){
@@ -35,6 +37,7 @@ class PostController extends Controller
         $post = new Post;
         $post->fill($request->all());
         $post->cityname_id = $request->cityname_id;
+        $post->genre_id = $request->genre_id;
         $post->user()->associate(Auth::user()); 
         $post->save();
 
