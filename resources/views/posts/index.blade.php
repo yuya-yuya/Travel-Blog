@@ -6,6 +6,7 @@
         {{ $post->title}}
       </a><br>
       {{ $post->body }}
+      <p>都市名:{{ $post->cityname->name}}</p>
       @if(Auth::id() === $post->user_id)
         <form method="POST" action="{{ route('posts.delete', ['id' => $post->id]) }}">
           @csrf
