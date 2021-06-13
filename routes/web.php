@@ -21,8 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// userルート
 Route::get('/users/{id}', 'UserController@show');
-
 Route::middleware('auth')->group(function () {
     Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
     Route::post('users/{id}/withdraw', 'UserController@withdraw')->name('users.withdraw');
@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe');
 });
 
+// postルート
 Route::middleware('auth')->group(function () {
     Route::get('/posts/new', 'PostController@new');
     Route::post('/posts/create', 'PostController@create')->name('posts.create');
@@ -38,4 +39,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/{id}', 'PostController@show')->name('users.show');
 
-
+// citynameルート
+Route::get('/citynames', 'CitynameController@index');
+Route::post('/citynames/create', 'CitynameController@create')->name('citynames.create');
+Route::post('citynames/{id}/delete', 'CitynameController@delete')->name('citynames.delete');
