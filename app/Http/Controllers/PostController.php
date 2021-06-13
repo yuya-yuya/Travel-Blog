@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Cityname;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -21,7 +22,9 @@ class PostController extends Controller
     }
 
     public function new(){
-        return view('posts.new');
+        $citynames = Cityname::all();
+        
+        return view('posts.new', ['citynames' => $citynames]);
     }
 
     public function create(Request $request){
@@ -31,6 +34,7 @@ class PostController extends Controller
         ]);
         $post = new Post;
         $post->fill($request->all());
+        $post->cityname_id = $request->cityname_id;
         $post->user()->associate(Auth::user()); 
         $post->save();
 
