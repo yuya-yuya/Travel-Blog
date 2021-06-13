@@ -1,3 +1,5 @@
+<a href="{{ route('posts.new')}}">新規投稿</a>
+
 <ul>
   @foreach($posts as $post)
     <li>

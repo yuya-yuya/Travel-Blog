@@ -14,5 +14,15 @@
     <label for="body">内容</label><br>
     <input name="body" type="text" /><br>
   </div>
+  <div>
+    <label for="cityname_id">都市名</label><br>
+    <select name="cityname_id">
+      @foreach($citynames as $cityname)
+        <option value="{{ $cityname->id }}">{{ $cityname->name }}<option>
+      @endforeach
+    </select>
+  </div>
   <button type="submit">投稿</button>
 </form>
+
+

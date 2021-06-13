@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
 // postルート
 Route::middleware('auth')->group(function () {
-    Route::get('/posts/new', 'PostController@new');
+    Route::get('/posts/new', 'PostController@new')->name('posts.new');
     Route::post('/posts/create', 'PostController@create')->name('posts.create');
     Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
 });
