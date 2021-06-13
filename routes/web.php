@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
@@ -43,3 +44,10 @@ Route::get('/posts/{id}', 'PostController@show')->name('users.show');
 Route::get('/citynames', 'CitynameController@index');
 Route::post('/citynames/create', 'CitynameController@create')->name('citynames.create');
 Route::post('citynames/{id}/delete', 'CitynameController@delete')->name('citynames.delete');
+
+// genreルート
+Route::get('/genres', 'GenreController@index');
+Route::post('/genres/create', 'GenreController@create')->name('genres.create');
+Route::post('/genres/{id}/delete', 'GenreController@delete')->name('genres.delete');
+
+

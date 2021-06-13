@@ -9,6 +9,7 @@
       </a><br>
       {{ $post->body }}
       <p>都市名:{{ $post->cityname->name}}</p>
+      <p>ジャンル名:{{ $post->genre->name}}</p>
       @if(Auth::id() === $post->user_id)
         <form method="POST" action="{{ route('posts.delete', ['id' => $post->id]) }}">
           @csrf

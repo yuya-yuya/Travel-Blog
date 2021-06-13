@@ -20,4 +20,9 @@ class Post extends Model
     {
         return $this->belongsTo(Cityname::class);
     }
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
 }
