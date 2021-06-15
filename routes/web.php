@@ -18,36 +18,73 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
-Route::get('/home', 'HomeController@index')->name('home');
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => false,
+        'verify'   => false
+    ]);
 
-// userルート
-Route::get('/users/{id}', 'UserController@show');
-Route::middleware('auth')->group(function () {
-    Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
-    Route::post('users/{id}/withdraw', 'UserController@withdraw')->name('users.withdraw');
-    Route::get('/users/{id}/edit', 'UserController@edit');
-    Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe');
+    // ログイン認証後
+    Route::middleware('auth:user')->group(function () {
+
+        // TOPページ
+        Route::resource('home', 'HomeController', ['only' => 'index']);
+
+    });
+
+    // userルート
+    Route::get('/users/{id}', 'UserController@show');
+    Route::middleware('auth')->group(function () {
+        Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
+        Route::post('users/{id}/withdraw', 'UserController@withdraw')->name('users.withdraw');
+        Route::get('/users/{id}/edit', 'UserController@edit');
+        Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe');
+    });
+
+    // postルート
+    Route::middleware('auth')->group(function () {
+        Route::get('/posts/new', 'PostController@new')->name('posts.new');
+        Route::post('/posts/create', 'PostController@create')->name('posts.create');
+        Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
+    });
+    Route::get('/posts', 'PostController@index');
+    Route::get('/posts/{id}', 'PostController@show')->name('users.show');
 });
 
-// postルート
-Route::middleware('auth')->group(function () {
-    Route::get('/posts/new', 'PostController@new')->name('posts.new');
-    Route::post('/posts/create', 'PostController@create')->name('posts.create');
-    Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
+// 管理者
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+
+    // ログイン認証関連
+    Auth::routes([
+        'register' => true,
+        'reset'    => false,
+        'verify'   => false
+    ]);
+
+    // ログイン認証後
+    Route::middleware('auth:admin')->group(function () {
+
+        // TOPページ
+        Route::resource('home', 'HomeController', ['only' => 'index']);
+
+        // genreルート
+        Route::get('/genres', 'GenreController@index');
+        Route::post('/genres/create', 'GenreController@create')->name('genres.create');
+        Route::post('/genres/{id}/delete', 'GenreController@delete')->name('genres.delete');
+
+        // citynameルート
+        Route::get('citynames', 'CitynameController@index');
+        Route::post('citynames/create', 'CitynameController@create')->name('citynames.create');
+        Route::post('citynames/{id}/delete', 'CitynameController@delete')->name('citynames.delete');
+
+    });
+
 });
-Route::get('/posts', 'PostController@index');
-Route::get('/posts/{id}', 'PostController@show')->name('users.show');
 
-// citynameルート
-Route::get('/citynames', 'CitynameController@index');
-Route::post('/citynames/create', 'CitynameController@create')->name('citynames.create');
-Route::post('citynames/{id}/delete', 'CitynameController@delete')->name('citynames.delete');
+// Auth::routes();
 
-// genreルート
-Route::get('/genres', 'GenreController@index');
-Route::post('/genres/create', 'GenreController@create')->name('genres.create');
-Route::post('/genres/{id}/delete', 'GenreController@delete')->name('genres.delete');
-
+// Route::get('/home', 'HomeController@index')->name('home');
 
