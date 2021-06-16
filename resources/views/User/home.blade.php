@@ -1,23 +1,7 @@
-@extends('layouts.user.app')
+userのホームです
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+<a href="{{ route('user.register')}}">新規登録</a>
+<a href="{{ route('user.login')}}">ログイン</a>
+<a href="{{ route('user.logout') }}">ログアウト</a>
+<a href="{{ route('user.users.index')}}">ユーザー一覧</a>
+<a href="{{ route('user.posts.index')}}">投稿一覧</a>

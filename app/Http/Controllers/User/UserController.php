@@ -11,6 +11,12 @@ use App\Http\Requests\User\UpdateRequest;
 
 class UserController extends Controller
 {
+    public function index(){
+        $users = User::all();
+
+        return view('user.users.index', ['users' => $users]);
+    }
+    
     public function show($id){
         $user = User::find($id);
 
@@ -39,6 +45,7 @@ class UserController extends Controller
     public function withdraw($request){
         $user = Auth::user();
         $user->delete();
+        
         return redirect('user/login');
     }
 }

@@ -32,5 +32,4 @@
   </div>
   <button type="submit">投稿</button>
 </form>
-
-
+<a href="{{ route('user.posts.index')}}">戻る</a>

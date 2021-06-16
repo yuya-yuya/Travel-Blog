@@ -1,3 +1,7 @@
+<a href="{{ route('user.posts.index') }}">
+  戻る
+</a><br>
+
 {{ $post -> title }}
 
 @foreach($post->replies as $reply)

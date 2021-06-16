@@ -15,7 +15,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.home');
 });
 
 // ユーザー
@@ -37,7 +37,8 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
     });
 
     // userルート
-    Route::get('/users/{id}', 'UserController@show');
+    Route::get('/users', 'UserController@index')->name('users.index');
+    Route::get('/users/{id}', 'UserController@show')->name('users.show');
     Route::middleware('auth')->group(function () {
         Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
         Route::post('users/{id}/withdraw', 'UserController@withdraw')->name('users.withdraw');
@@ -52,8 +53,8 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
         Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
         Route::post('/posts/{id}/reply', 'PostController@reply')->name('posts.reply');
     });
-    Route::get('/posts', 'PostController@index');
-    Route::get('/posts/{id}', 'PostController@show')->name('users.show');
+    Route::get('/posts', 'PostController@index')->name('posts.index');
+    Route::get('/posts/{id}', 'PostController@show')->name('posts.show');
 });
 
 // 管理者

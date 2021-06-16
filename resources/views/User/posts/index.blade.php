@@ -1,10 +1,12 @@
 <a href="{{ route('user.posts.new')}}">新規投稿</a>
+<a href="{{ route('user.users.index')}}">ユーザー一覧</a>
+<a href="{{ route('user.home.index')}}">トップページ</a>
 
 <ul>
   @foreach($posts as $post)
     <li>
       {{ $post->user->name }}<br>
-      <a href="{{ route('user.users.show', ['id' => $post->id]) }}">
+      <a href="{{ route('user.posts.show', ['id' => $post->id]) }}">
         {{ $post->title}}
       </a><br>
       {{ $post->body }}
