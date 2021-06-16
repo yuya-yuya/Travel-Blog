@@ -1,7 +1,14 @@
+@extends('layouts.user.header')
+
+
 userのホームです
 
-<a href="{{ route('user.register')}}">新規登録</a>
-<a href="{{ route('user.login')}}">ログイン</a>
-<a href="{{ route('user.logout') }}">ログアウト</a>
-<a href="{{ route('user.users.index')}}">ユーザー一覧</a>
-<a href="{{ route('user.posts.index')}}">投稿一覧</a>
+<ul>
+  @foreach($genres as $genre)
+    <li>
+      <a href="{{ route('user.posts.genreshow', ['id' => $genre->id]) }}">{{ $genre->name }}</a>
+    </li>
+  @endforeach
+</ul>
+
+

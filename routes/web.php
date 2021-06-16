@@ -14,9 +14,7 @@
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('user.home');
-});
+Route::get('/', 'User\HomeController@index');
 
 // ユーザー
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
@@ -49,6 +47,7 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
     // postルート
     Route::middleware('auth')->group(function () {
         Route::get('/posts/new', 'PostController@new')->name('posts.new');
+        Route::get('/posts/{id}/genreshow', 'PostController@genreshow')->name('posts.genreshow');
         Route::post('/posts/create', 'PostController@create')->name('posts.create');
         Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
         Route::post('/posts/{id}/reply', 'PostController@reply')->name('posts.reply');
