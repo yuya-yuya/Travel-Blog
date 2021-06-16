@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Cityname;
 use App\Models\Genre;
+use App\Models\Reply;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -50,6 +51,17 @@ class PostController extends Controller
         $post -> delete();
         
         return redirect()->to('user/posts'); 
+    }
+
+    public function reply(Request $request, $id)
+    {
+        $reply = new Reply;
+        $reply->fill($request->all());
+        $reply->user()->associate(Auth::user());
+        $reply->post()->associate($id);
+        $reply->save();
+
+        return redirect()->back();
     }
 }
 

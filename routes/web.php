@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ユーザー
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
     // ログイン認証関連
@@ -49,6 +50,7 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
         Route::get('/posts/new', 'PostController@new')->name('posts.new');
         Route::post('/posts/create', 'PostController@create')->name('posts.create');
         Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
+        Route::post('/posts/{id}/reply', 'PostController@reply')->name('posts.reply');
     });
     Route::get('/posts', 'PostController@index');
     Route::get('/posts/{id}', 'PostController@show')->name('users.show');
