@@ -24,6 +24,13 @@ class PostController extends Controller
         return view('user.posts.show', ['post' => $post]);
     }
 
+    public function genreshow($id){
+        $posts = Post::where('genre_id', $id)->get();
+        dd($posts);
+
+        return view('user.posts.genreshow', ['posts' => $posts]);
+    }
+
     public function new(){
         $citynames = Cityname::all();
         $genres = Genre::all();
