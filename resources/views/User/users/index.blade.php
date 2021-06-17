@@ -1,9 +1,20 @@
-<a href="{{ route('user.posts.index')}}">投稿一覧</a>
-<ul>
-  @foreach($users as $user)
-    <li>
-      <a href="{{ route('user.users.show', ['id' => $user->id]) }}">{{ $user->name }}</a>
-    </li>
-  @endforeach
-</ul>
+@extends('layouts.user.app')
+
+@section('content')
+  <ul>
+    @foreach($users as $user)
+      <li style="list-style: none;">
+        <div class="card">
+          <div class="card-header">
+            <a href="{{ route('user.users.show', ['id' => $user->id]) }}">{{ $user->name }}</a>
+          </div>
+          <div class="card-text"></div>
+          <div class="card-body">
+            プロフィール
+          </div>
+        </div>
+      </li>
+    @endforeach
+  </ul>
+@endsection
 
