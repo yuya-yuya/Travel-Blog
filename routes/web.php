@@ -13,8 +13,13 @@
 
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\UserController;
+use App\Models\Genre;
 
-Route::get('/', 'User\HomeController@index');
+Route::get('/', function () {
+    $genres = Genre::all();
+
+    return view('user.home', ['genres' => $genres]);
+});
 
 // ユーザー
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
@@ -73,12 +78,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('home', 'HomeController', ['only' => 'index']);
 
         // genreルート
-        Route::get('/genres', 'GenreController@index');
+        Route::get('/genres', 'GenreController@index')->name('genres.index');
         Route::post('/genres/create', 'GenreController@create')->name('genres.create');
         Route::post('/genres/{id}/delete', 'GenreController@delete')->name('genres.delete');
 
         // citynameルート
-        Route::get('citynames', 'CitynameController@index');
+        Route::get('citynames', 'CitynameController@index')->name('citynames.index');
         Route::post('citynames/create', 'CitynameController@create')->name('citynames.create');
         Route::post('citynames/{id}/delete', 'CitynameController@delete')->name('citynames.delete');
 
