@@ -48,23 +48,33 @@
                                     <a class="nav-link" href="{{ route('admin.register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.users.index')}}">ユーザー一覧</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.posts.index')}}">投稿一覧</a>
+                            </li> 
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('admin.logout') }}"
-                                       onclick="event.preventDefault();
+                            <li class="nav-item">
+                                <p class="nav-link">ようこそ{{ Auth::user()->name }}さん</p>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.home.index') }}">トップページ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.users.index')}}">ユーザー一覧</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.posts.index')}}">投稿一覧</a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                                    ログアウト
+                                </a>
+                                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST">
+                                    @csrf
+                                </form>
                             </li>
                         @endunless
                     </ul>

@@ -41,11 +41,14 @@
                         <!-- Authentication Links -->
                         @unless (Auth::guard('user')->check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('user.home.index') }}">トップページ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.login') }}">ログイン</a>
                             </li>
                             @if (Route::has('user.register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('user.register') }}">新規登録</a>
                                 </li>
                             @endif
                             <li class="nav-item">
@@ -55,6 +58,11 @@
                                 <a class="nav-link" href="{{ route('user.posts.index')}}">投稿一覧</a>
                             </li> 
                         @else
+                            @if (Auth::guard('admin')->check())
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.home.index') }}">管理者トップ</a>
+                                </le>
+                            @endif
                             <li class="nav-item">
                                 <p class="nav-link">ようこそ{{ Auth::user()->name }}さん</p>
                             </li>
