@@ -1,4 +1,6 @@
+@extends('layouts.user.app')
 
+@section('content')
   <ul>
     @foreach($posts as $post)
       <li>
@@ -6,3 +8,4 @@
       </li>
     @endforeach
   </ul>
+@endsection

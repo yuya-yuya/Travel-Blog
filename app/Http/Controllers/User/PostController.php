@@ -26,7 +26,6 @@ class PostController extends Controller
 
     public function genreshow($id){
         $posts = Post::where('genre_id', $id)->get();
-        dd($posts);
 
         return view('user.posts.genreshow', ['posts' => $posts]);
     }
