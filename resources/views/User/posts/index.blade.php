@@ -11,6 +11,7 @@
         {{ $post->body }}
         <p>都市名:{{ $post->cityname->name}}</p>
         <p>ジャンル名:{{ $post->genre->name}}</p>
+        <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px">
         @if(Auth::id() === $post->user_id)
           <form method="POST" action="{{ route('user.posts.delete', ['id' => $post->id]) }}">
             @csrf

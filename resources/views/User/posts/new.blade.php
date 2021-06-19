@@ -7,11 +7,15 @@
   @foreach($errors->all() as $message)
     <div>{{ $message }}</div>
   @endforeach
-  <form method="post" action="{{ route('user.posts.create') }}">
+  <form method="post" action="{{ route('user.posts.create') }}" enctype='multipart/form-data'>
     @csrf
     <div>
       <label for="title">タイトル</label><br>
       <input name="title" type="text" /><br>
+    </div>
+    <div>
+      <label for="post_image">投稿写真</label><br>
+      <input name="post_image" type="file"><br>
     </div>
     <div>
       <label for="body">内容</label><br>
@@ -33,7 +37,7 @@
         @endforeach
       </select>
     </div>
-    <button type="submit">投稿</button>
+    <button type="submit" class="btn btn-primary">投稿</button>
   </form>
-  <a href="{{ route('user.posts.index')}}">戻る</a>
+  <a href="{{ route('user.posts.index')}}" class="btn btn-secondary">戻る</a>
 @endsection

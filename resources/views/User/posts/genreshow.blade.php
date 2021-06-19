@@ -4,7 +4,8 @@
   <ul>
     @foreach($posts as $post)
       <li>
-        {{ $post->title }}
+        {{ $post->title }}<br>
+        <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px">
       </li>
     @endforeach
   </ul>

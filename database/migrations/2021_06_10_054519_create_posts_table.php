@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('genre_id');
             $table->string('title');
             $table->text('body');
+            $table->string('post_image');
             $table->timestamps();
             $table->softDeletes();
         });
