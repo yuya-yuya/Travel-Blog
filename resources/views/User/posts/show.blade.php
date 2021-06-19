@@ -5,6 +5,7 @@
   <div class="card">
     <div class="card-header">{{ $post -> title }}</div>
     <div class="card-body">
+      <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px">
       <p class="card-text">{{ $post->body }}</p>
     </div>
   </div><br>

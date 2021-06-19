@@ -4,7 +4,8 @@
   <ul>
     @foreach($genres as $genre)
       <li>
-        {{ $genre->name}}
+        {{ $genre->name}}<br>
+        <img src="../../uploads/{{ $genre->image_path }}" width="100px" height="100px">
         <div>
           <form method="post" action="{{ route('admin.genres.delete', ['id' => $genre->id]) }}">
             @csrf
@@ -15,12 +16,14 @@
     @endforeach
   </ul>
 
-  <form method="post" action="{{ route('admin.genres.create') }}">
+  <form method="post" action="{{ route('admin.genres.create') }}" enctype='multipart/form-data'>
     @csrf
     <div>
       <label for="name">ジャンル名</label><br>
-      <input name="name" type="text">
+      <input name="name" type="text"><br>
+      <input name="genre_image" type="file">
     </div>
-    <button type="submit">送信</button>
+    <button type="submit" class="btn btn-primary">送信</button>
   </form>
+  <a href="{{ route('admin.home.index') }}" class="btn btn-secondary">戻る</a>
 @endsection

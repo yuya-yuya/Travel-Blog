@@ -45,8 +45,8 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
         Route::post('users/{id}/withdraw', 'UserController@withdraw')->name('users.withdraw');
-        Route::get('/users/{id}/edit', 'UserController@edit');
-        Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe');
+        Route::get('/users/{id}/edit', 'UserController@edit')->name('users.edit');
+        Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe')->name('users.unsubscribe');
     });
 
     // postルート

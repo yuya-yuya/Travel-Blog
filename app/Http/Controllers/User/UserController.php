@@ -29,8 +29,18 @@ class UserController extends Controller
     }
 
     public function update(UpdateRequest $request){
+        if ($file = $request->user_image) {
+            $fileName = time() . $file->getClientOriginalName();
+            $target_path = public_path('uploads/');
+            $file->move($target_path, $fileName);
+        } else {
+            $fileName = "";
+        }
+
+
         $user = Auth::user();
         $user->fill($request->all());
+        $user->user_image = $fileName;
         $user->save();
        
         return redirect()->back()->with(['message' => '更新しました！']);
