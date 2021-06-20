@@ -41,6 +41,7 @@ class UserController extends Controller
         $user = Auth::user();
         $user->fill($request->all());
         $user->user_image = $fileName;
+        $user->introduction = $request->introduction;
         $user->save();
        
         return redirect()->back()->with(['message' => '更新しました！']);

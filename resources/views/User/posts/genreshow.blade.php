@@ -6,7 +6,9 @@
       <li style="margin-bottom: 30px;">
         <div class="card">
           <div class="card-header">
-            {{ $post->title }}
+            <a href="{{ route('user.posts.show', ['id' => $post->id]) }}">
+              {{ $post->title }}
+            </a>
           </div>
           <div class="card-body">
             <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px">
