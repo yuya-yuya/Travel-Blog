@@ -10,9 +10,10 @@
   <div class="container">
     <div class="row">
       <div class="col align-self-center">
+        <h3>新規投稿</h3>
         <form method="post" action="{{ route('user.posts.create') }}" enctype='multipart/form-data'>
           @csrf
-          <div>
+          <div style="margin-top: 30px;">
             <label for="title">タイトル</label><br>
             <input name="title" type="text" size="60"><br>
           </div>
