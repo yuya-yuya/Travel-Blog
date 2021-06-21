@@ -11,7 +11,12 @@
             </a>
           </div>
           <div class="card-body">
-            <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px">
+            @if($post->post_image == Null)
+              <img src="../../../img/no_image_post.jpg" width="100px" height="100px">
+            @else
+              <img src="../../../uploads/{{ $post->post_image }}" width="100px" height="100px">
+            @endif
+            <p class="card-text">{{ $post->body }}</p>
           </div>
         </div>
       </li>

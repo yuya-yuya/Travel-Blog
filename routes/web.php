@@ -19,7 +19,7 @@ Route::get('/', function () {
     $genres = Genre::all();
 
     return view('user.home', ['genres' => $genres]);
-});
+})->name('user.home.index');
 
 // ユーザー
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
@@ -30,14 +30,6 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
         'reset'    => false,
         'verify'   => false
     ]);
-
-    // ログイン認証後
-    Route::middleware('auth:user')->group(function () {
-
-        // TOPページ
-        Route::resource('home', 'HomeController', ['only' => 'index']);
-
-    });
 
     // userルート
     Route::get('/users', 'UserController@index')->name('users.index');
