@@ -32,6 +32,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.home.index') }}">
+                        <i class="fas fa-home">ユーザーホーム</i>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.login') }}">
                         <i class="fas fa-sign-in-alt">管理者ログイン</i>
                     </a>
@@ -65,6 +70,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.home.index') }}">
+                        <i class="fas fa-home">ユーザーホーム</i>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.home.index') }}">
                         <i class="fas fa-home">管理者ホーム</i>
