@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Genre;
 
 class RegisterController extends Controller
 {
@@ -74,6 +75,13 @@ class RegisterController extends Controller
             'email'    => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function redirectPath()
+    {
+        $genres = Genre::all();
+
+        return '/';
     }
     
 }

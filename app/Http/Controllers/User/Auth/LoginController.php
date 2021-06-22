@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Genre;
 
 class LoginController extends Controller
 {
@@ -64,5 +65,12 @@ class LoginController extends Controller
     public function loggedOut(Request $request)
     {
         return redirect(route('user.login'));
+    }
+
+    public function redirectPath()
+    {
+        $genres = Genre::all();
+
+        return '/';
     }
 }
