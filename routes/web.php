@@ -44,14 +44,16 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
     // postルート
     Route::middleware('auth')->group(function () {
         Route::get('/posts/new', 'PostController@new')->name('posts.new');
-        Route::get('/posts/{id}/genreshow', 'PostController@genreshow')->name('posts.genreshow');
         Route::post('/posts/create', 'PostController@create')->name('posts.create');
         Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
         Route::post('/posts/{id}/reply', 'PostController@reply')->name('posts.reply');
     });
     Route::get('/posts', 'PostController@index')->name('posts.index');
     Route::get('/posts/{id}', 'PostController@show')->name('posts.show');
+    Route::get('/posts/{id}/genreshow', 'PostController@genreshow')->name('posts.genreshow');
 });
+
+
 
 // 管理者
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {

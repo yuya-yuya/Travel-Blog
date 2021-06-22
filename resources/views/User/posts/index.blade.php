@@ -9,10 +9,10 @@
   @if(@posts == [])
     <p>投稿はまだありません</p>
   @else
-    <ul class="card-deck" style="list-style: none;">
+    <ul class="card-deck" style="list-style: none; margin-top: 30px;">
       @foreach($posts as $post)
         <li style="margin-bottom: 30px;">
-          <div class="card" style="width: 300px; height: 500px;">
+          <div class="card" style="width: 300px;">
             <div class="card-header" style="width: 300px; height: 100px;">
               <a href="{{ route('user.posts.show', ['id' => $post->id]) }}">
                 <p style="margin-bottom: -10px;">{{ $post->title}}</p>
@@ -32,10 +32,10 @@
               <p style="font-size: 12px; margin-bottom: -10px;">ジャンル名:{{ $post->genre->name}}</p>
             </div>
             @if(Auth::id() === $post->user_id)
-              <div style="width: 300px;">
+              <div class="card-footer" style="width: 300px;">
                 <form method="POST" action="{{ route('user.posts.delete', ['id' => $post->id]) }}">
                   @csrf
-                  <button type="submit">削除</button>
+                  <button type="submit" class="btn btn-danger">削除</button>
                 </form>
               </div>
             @endif
