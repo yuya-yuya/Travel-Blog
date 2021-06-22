@@ -1,7 +1,12 @@
 @extends('layouts.user.app')
 
 @section('content')
-  <ul class="card-deck" style="list-style: none;">
+  <div class="container">
+    <div class="row">
+      <h4>{{ $genre->name}} 一覧</h4>
+    </div>
+  </div>
+  <ul class="card-deck" style="list-style: none; margin-top: 30px;">
     @foreach($posts as $post)
       <li style="margin-bottom: 30px;">
         <div class="card">

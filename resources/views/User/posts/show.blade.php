@@ -16,7 +16,7 @@
 
   <h4>返信一覧</h4>
   @foreach($post->replies as $reply)
-    <div class="card">
+    <div class="card" style="margin-top: 30px;">
       <div class="card-header">{{ $reply->user->name }}</div>
       <div class="card-body">
         <p class="card-text">{{ $reply->body }}</p>
@@ -40,7 +40,8 @@
     </div>
   @endauth
 
-  <a href="{{ route('user.posts.index') }}">
-    戻る
+  <a href="{{ route('user.posts.genreshow', ['id' => $post->genre_id]) }}" class="btn btn-secondary">
+    {{ $post->genre->name }} 一覧へ戻る
   </a><br>
 @endsection
+
