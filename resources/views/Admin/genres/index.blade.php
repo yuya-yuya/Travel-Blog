@@ -33,7 +33,7 @@
         </div>
         <div style="margin-top: 30px;">
           <button type="submit" class="btn btn-primary">送信</button>
-          <a href="{{ route('admin.home.index') }}" class="btn btn-secondary">戻る</a>
+          <a href="{{ route('admin.home.index') }}" class="btn btn-secondary">管理者トップ</a>
         </div>
       </form>
     </div>

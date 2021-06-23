@@ -1,4 +1,4 @@
-@extends('layouts.user.app')
+@extends('layouts.admin.app')
 
 @section('content')
   <div class="container">
@@ -21,22 +21,17 @@
             @endif
             {{ $user -> introduction}}
           </div>
-          @if(Auth::id() === $user->id)
-            <div class="card-footer">
-              <a href="{{ route('user.users.edit' ,['id' => $user->id]) }}" class="btn btn-success" style="font-size: 10px;">
-                登録情報編集
-              </a>
-              <a href="{{ route('user.users.unsubscribe' ,['id' => $user->id]) }}" class="btn btn-danger" style="font-size: 10px;">
-                登録情報削除
-              </a>
-            </div>
-          @endif
+          <div class="card-footer">
+            <a href="{{ route('user.users.edit' ,['id' => $user->id]) }}" class="btn btn-success" style="font-size: 10px;">
+              登録情報編集
+            </a>
+            <a href="{{ route('user.users.unsubscribe' ,['id' => $user->id]) }}" class="btn btn-danger" style="font-size: 10px;">
+              登録情報削除
+            </a>
+          </div>
         </div>
       </li>
     @endforeach
   </ul>
-  @if (Auth::guard('admin')->check())
-    <a class="nav-link" href="{{ route('admin.home.index') }}">管理者トップ</a>
-  @endif
+  <a href="{{ route('admin.home.index') }}" class="btn btn-secondary">管理者トップ</a>
 @endsection
-
