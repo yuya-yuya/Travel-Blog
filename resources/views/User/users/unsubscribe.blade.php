@@ -15,5 +15,8 @@
       </div>
     </div>
   </div>
+  @if (Auth::guard('admin')->check())
+    <a class="nav-link" href="{{ route('admin.home.index') }}">管理者トップ</a>
+  @endif
 @endsection
 

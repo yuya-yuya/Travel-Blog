@@ -71,6 +71,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         // TOPページ
         Route::resource('home', 'HomeController', ['only' => 'index']);
 
+        // AdminUseルート
+        Route::get('/users', 'UserController@index')->name('users.index');
+
         // genreルート
         Route::get('/genres', 'GenreController@index')->name('genres.index');
         Route::post('/genres/create', 'GenreController@create')->name('genres.create');
