@@ -9,7 +9,7 @@
   @endforeach
   <div class="container">
     <div class="row">
-      <div class="col align-self-center">
+      <div class="col-md-6 offset-md-3">
         <h3>新規投稿</h3>
         <form method="post" action="{{ route('user.posts.create') }}" enctype='multipart/form-data'>
           @csrf
