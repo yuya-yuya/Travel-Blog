@@ -21,6 +21,11 @@ Route::get('/', function () {
     return view('user.home', ['genres' => $genres]);
 })->name('user.home.index');
 
+Route::get('/about', function () {
+
+    return view('user.about');
+})->name('user.about');
+
 // ユーザー
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
@@ -30,6 +35,7 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
         'reset'    => false,
         'verify'   => false
     ]);
+
 
     // userルート
     Route::get('/users', 'UserController@index')->name('users.index');

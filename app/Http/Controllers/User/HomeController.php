@@ -19,9 +19,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $genres = Genre::all();
-
-        return view('user.home', ['genres' => $genres]);
+        
     }
 
     /**

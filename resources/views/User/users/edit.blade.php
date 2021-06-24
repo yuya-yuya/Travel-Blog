@@ -3,7 +3,7 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-md-6 offset-md-3">
         <h3>ユーザ情報変更画面</h3>
         @if(Session::has('message'))
           <div>
