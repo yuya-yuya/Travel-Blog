@@ -15,9 +15,9 @@
           </div>
           <div class="card-body" style="height: 150px;">
             @if($user->user_image == Null)
-              <img src="../../uploads/no_image.jpg" width="100px" height="100px">
+              <img src="../../uploads/no_image.jpg" width="100px" height="100px" style="display: block; margin: auto;">
             @else
-              <img src="../../uploads/{{ $user->user_image }}" width="100px" height="100px">
+              <img src="../../uploads/{{ $user->user_image }}" width="100px" height="100px" style="display: block; margin: auto;">
             @endif
             {{ $user -> introduction}}
           </div>

@@ -20,12 +20,12 @@
               <p style="font-size: 12px; margin-bottom: -5px;">posted by {{ $post->user->name }}</p>
             </div>
             <div class="card-body" style="width: 300px; height: 300px;">
-              {{ $post->body }}<br>
               @if($post->post_image == Null)
-                <img src="../../img/no_image_post.jpg" width="100px" height="100px">
+                <img src="../../img/no_image_post.jpg" width="100px" height="100px" style="display: block; margin: auto;">
               @else
-                <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px">
+                <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px" style="display: block; margin: auto;">
               @endif
+              {{ $post->body }}
             </div>
             <div class="card-footer" style="width: 300px; height: 100px;">
               <p style="font-size: 12px;">都市名:{{ $post->cityname->name}}</p>
