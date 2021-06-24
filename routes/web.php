@@ -18,7 +18,7 @@ use App\Models\Genre;
 Route::get('/', function () {
     $genres = Genre::all();
 
-    return view('user.home', ['genres' => $genres]);
+    return view('User.home', ['genres' => $genres]);
 })->name('user.home.index');
 
 Route::get('/about', function () {
