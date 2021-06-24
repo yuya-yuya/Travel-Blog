@@ -54,7 +54,7 @@ class RegisterController extends Controller
     // 新規登録画面
     public function showRegistrationForm()
     {
-        return view('user.auth.register');
+        return view('User.auth.register');
     }
 
     // バリデーション
