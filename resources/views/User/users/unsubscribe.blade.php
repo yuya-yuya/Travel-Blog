@@ -1,9 +1,9 @@
 @extends('layouts.user.app')
 
 @section('content')
-  <div class="container">
+  <div class="container" style="margin-top: 200px;">
     <div class="row">
-      <div>
+      <div class="coi-md-6 offset-md-3">
         <p style="font-size: 40px;">本当に削除しますか？</p>
         <form method="POST" action="{{ route('user.users.withdraw', ['id' => $user->id]) }}">
           @csrf

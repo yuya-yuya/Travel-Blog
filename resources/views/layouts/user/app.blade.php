@@ -41,6 +41,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.about') }}">
+                        <i class="far fa-address-card">転・点・展について</i>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.login') }}">
                         <i class="fas fa-sign-in-alt">ログイン</i>
                     </a>
@@ -80,6 +85,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.home.index') }}">
                         <i class="fas fa-home">ホーム</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.about') }}">
+                        <i class="far fa-address-card">転・点・展について</i>
                     </a>
                 </li>
                 <li class="nav-item">
