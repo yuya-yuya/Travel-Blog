@@ -15,27 +15,27 @@ class PostController extends Controller
     public function index(){
         $posts = Post::all();
 
-        return view('user.posts.index', ['posts' => $posts]);
+        return view('User.posts.index', ['posts' => $posts]);
     }
 
     public function show($id){
         $post = Post::find($id);
 
-        return view('user.posts.show', ['post' => $post]);
+        return view('User.posts.show', ['post' => $post]);
     }
 
     public function genreshow($id){
         $genre = Genre::find($id);
         $posts = Post::where('genre_id', $id)->get();
 
-        return view('user.posts.genreshow', ['posts' => $posts, 'genre' => $genre]);
+        return view('User.posts.genreshow', ['posts' => $posts, 'genre' => $genre]);
     }
 
     public function new(){
         $citynames = Cityname::all();
         $genres = Genre::all();
         
-        return view('user.posts.new', ['citynames' => $citynames, 'genres' => $genres]);
+        return view('User.posts.new', ['citynames' => $citynames, 'genres' => $genres]);
     }
 
     public function create(Request $request){
@@ -60,14 +60,14 @@ class PostController extends Controller
         $post->user()->associate(Auth::user()); 
         $post->save();
 
-        return redirect()->to('user/posts'); 
+        return redirect()->to('User/posts'); 
     }
 
     public function delete($id){
         $post = Post::find($id);
         $post -> delete();
         
-        return redirect()->to('user/posts'); 
+        return redirect()->to('User/posts'); 
     }
 
     public function reply(Request $request, $id)

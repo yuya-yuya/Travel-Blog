@@ -22,12 +22,12 @@ class UserController extends Controller
         $user = User::find($id);
         $posts =  Post::where('user_id', $id)->get();
 
-        return view('user.users.show', ['user' => $user, 'posts' => $posts]);
+        return view('User.users.show', ['user' => $user, 'posts' => $posts]);
     }
 
     public function edit(){
         $user = Auth::user();
-        return view('user.users.edit', ['user' => $user]);
+        return view('User.users.edit', ['user' => $user]);
     }
 
     public function update(UpdateRequest $request){
@@ -52,13 +52,13 @@ class UserController extends Controller
     public function unsubscribe(){
         $user = Auth::user();
 
-        return view('user.users.unsubscribe', ['user' => $user]);
+        return view('User.users.unsubscribe', ['user' => $user]);
     }
 
     public function withdraw($request){
         $user = Auth::user();
         $user->delete();
         
-        return redirect('user/login');
+        return redirect('User/login');
     }
 }
