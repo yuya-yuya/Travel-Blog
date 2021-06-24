@@ -50,7 +50,7 @@ class LoginController extends Controller
     // ログイン画面
     public function showLoginForm()
     {
-        return view('user.auth.login');
+        return view('User.auth.login');
     }
 
     // ログアウト処理
@@ -64,7 +64,7 @@ class LoginController extends Controller
     // ログアウトした時のリダイレクト先
     public function loggedOut(Request $request)
     {
-        return redirect(route('user.login'));
+        return redirect(route('User.login'));
     }
 
     public function redirectPath()
