@@ -18,12 +18,12 @@ use App\Models\Genre;
 Route::get('/', function () {
     $genres = Genre::all();
 
-    return view('user.home', ['genres' => $genres]);
+    return view('User.home', ['genres' => $genres]);
 })->name('user.home.index');
 
 Route::get('/about', function () {
 
-    return view('user.about');
+    return view('User.about');
 })->name('user.about');
 
 // ユーザー
