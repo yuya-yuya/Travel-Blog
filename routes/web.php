@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
 
-    return view('user.about');
+    return view('User.about');
 })->name('user.about');
 
 // ユーザー
