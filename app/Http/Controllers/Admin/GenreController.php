@@ -16,8 +16,6 @@ class GenreController extends Controller
 
     public function create(Request $request){
 
-        $genres = Genre::all();
-
         if ($file = $request->genre_image) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');
@@ -30,6 +28,8 @@ class GenreController extends Controller
         $genre->name = $request->name;
         $genre->image_path = $fileName;
         $genre->save();
+
+        $genres = Genre::all();
 
         return view('Admin.genres.index', ['genres' => $genres]);
     }
