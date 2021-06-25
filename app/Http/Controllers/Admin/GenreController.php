@@ -36,10 +36,10 @@ class GenreController extends Controller
 
     public function delete($id){
 
-        $genres = Genre::all();
-        
         $genre = Genre::find($id);
         $genre->delete();
+
+        $genres = Genre::all();
 
         return view('Admin.genres.index', ['genres' => $genres]);
     }
