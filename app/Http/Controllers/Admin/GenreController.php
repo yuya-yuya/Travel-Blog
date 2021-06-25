@@ -16,6 +16,8 @@ class GenreController extends Controller
 
     public function create(Request $request){
 
+        $genres = Genre::all();
+
         if ($file = $request->genre_image) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');
@@ -33,6 +35,9 @@ class GenreController extends Controller
     }
 
     public function delete($id){
+
+        $genres = Genre::all();
+        
         $genre = Genre::find($id);
         $genre->delete();
 
