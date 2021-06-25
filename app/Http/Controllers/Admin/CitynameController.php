@@ -11,7 +11,7 @@ class CitynameController extends Controller
     public function index(){
         $citynames = Cityname::all();
 
-        return view('admin.citynames.index', ['citynames' => $citynames]);
+        return view('Admin.citynames.index', ['citynames' => $citynames]);
     } 
 
     public function create(Request $request){
@@ -29,14 +29,18 @@ class CitynameController extends Controller
         $cityname->cityname_image = $fileName;
         $cityname->save();
 
-        return redirect()->to('admin/citynames');
+        $citynames = Cityname::all();
+
+        return view('Admin.citynames.index', ['citynames' => $citynames]);
     }
 
     public function delete($id){
         $cityname = Cityname::find($id);
         $cityname->delete();
 
-        return redirect()->to('admin/citynames');
+        $citynames = Cityname::all();
+
+        return view('Admin.citynames.index', ['citynames' => $citynames]);
     }
 
 

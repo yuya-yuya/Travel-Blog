@@ -10,7 +10,11 @@
             <p style="font-size: 25px;">{{ $cityname->name}}</p>
           </div>
           <div class="card-body" style="width: 200px; height: 150px;">
-            <img src="../../uploads/{{ $cityname->cityname_image }}" width="100px" height="100px" style="display: block; margin: auto;">
+            @if($cityname->cityname_image == Null)
+              <img src="../../img/no_image_post.jpg" width="100px" height="100px">
+            @else
+              <img src="../../uploads/{{ $cityname->cityname_image }}" width="100px" height="100px" style="display: block; margin: auto;">
+            @enfif
           </div>
           <div class="card-footer">
             <form method="post" action="{{ route('admin.citynames.delete', ['id' => $cityname->id]) }}">

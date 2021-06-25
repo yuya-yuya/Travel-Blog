@@ -77,8 +77,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         // TOPページ
         Route::resource('home', 'HomeController', ['only' => 'index']);
 
-        // AdminUseルート
+        // AdminUserルート
         Route::get('/users', 'UserController@index')->name('users.index');
+        Route::post('/users/update/{id}', 'UserController@update')->name('users.update');
+        Route::post('users/{id}/withdraw', 'UserController@withdraw')->name('users.withdraw');
+        Route::get('/users/{id}/edit', 'UserController@edit')->name('users.edit');
+        Route::get('users/{id}/unsubscribe', 'UserController@unsubscribe')->name('users.unsubscribe');
 
         // genreルート
         Route::get('/genres', 'GenreController@index')->name('genres.index');
