@@ -67,7 +67,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post -> delete();
         
-        return redirect()->to('User/posts'); 
+        return redirect()->to('user/posts'); 
     }
 
     public function reply(Request $request, $id)
