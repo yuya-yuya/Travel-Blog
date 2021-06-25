@@ -29,14 +29,18 @@ class CitynameController extends Controller
         $cityname->cityname_image = $fileName;
         $cityname->save();
 
-        return redirect()->to('Admin/citynames');
+        $citynames = Cityname::all();
+
+        return view('Admin.citynames.index', ['citynames' => $citynames]);
     }
 
     public function delete($id){
         $cityname = Cityname::find($id);
         $cityname->delete();
 
-        return redirect()->to('Admin/citynames');
+        $citynames = Cityname::all();
+
+        return view('Admin.citynames.index', ['citynames' => $citynames]);
     }
 
 
