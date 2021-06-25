@@ -22,10 +22,10 @@
             {{ $user -> introduction}}
           </div>
           <div class="card-footer">
-            <a href="{{ route('user.users.edit' ,['id' => $user->id]) }}" class="btn btn-success" style="font-size: 10px;">
+            <a href="{{ route('admin.users.edit' ,['id' => $user->id]) }}" class="btn btn-success" style="font-size: 10px;">
               登録情報編集
             </a>
-            <a href="{{ route('user.users.unsubscribe' ,['id' => $user->id]) }}" class="btn btn-danger" style="font-size: 10px;">
+            <a href="{{ route('admin.users.unsubscribe' ,['id' => $user->id]) }}" class="btn btn-danger" style="font-size: 10px;">
               登録情報削除
             </a>
           </div>
