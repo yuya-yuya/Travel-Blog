@@ -29,13 +29,13 @@ class GenreController extends Controller
         $genre->image_path = $fileName;
         $genre->save();
 
-        return redirect()->to('Admin/genres');
+        return view('Admin.genres.index', ['genres' => $genres]);
     }
 
     public function delete($id){
         $genre = Genre::find($id);
         $genre->delete();
 
-        return redirect()->to('Admin/genres');
+        return view('Admin.genres.index', ['genres' => $genres]);
     }
 }
