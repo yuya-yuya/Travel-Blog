@@ -64,7 +64,7 @@ class LoginController extends Controller
     // ログアウトした時のリダイレクト先
     public function loggedOut(Request $request)
     {
-        return redirect(route('User.login'));
+        return redirect(route('User.auth.login'));
     }
 
     public function redirectPath()
