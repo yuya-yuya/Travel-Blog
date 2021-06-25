@@ -10,7 +10,11 @@
             <p style="font-size: 25px;">{{ $genre->name}}</p>
           </div>
           <div class="card-body" style="width: 200px; height: 150px;">
-            <img src="../../uploads/{{ $genre->image_path }}" width="100px" height="100px" style="display: block; margin: auto;">
+            @if($genre->image_path == Null)
+              <img src="../../img/no_image_post.jpg" width="100px" height="100px">
+            @else
+              <img src="../../uploads/{{ $genre->image_path }}" width="100px" height="100px" style="display: block; margin: auto;">
+            @endif
           </div>
           <div class="card-footer">
             <form method="post" action="{{ route('admin.genres.delete', ['id' => $genre->id]) }}">
