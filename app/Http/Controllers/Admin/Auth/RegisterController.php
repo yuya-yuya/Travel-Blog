@@ -51,7 +51,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('admin.auth.register');
+        return view('Admin.auth.register');
     }
 
     protected function validator(array $data)
