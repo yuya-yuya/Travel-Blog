@@ -11,7 +11,7 @@ class GenreController extends Controller
     public function index(){
         $genres = Genre::all();
 
-        return view('admin.genres.index', ['genres' => $genres]);
+        return view('Admin.genres.index', ['genres' => $genres]);
     }
 
     public function create(Request $request){
@@ -29,13 +29,13 @@ class GenreController extends Controller
         $genre->image_path = $fileName;
         $genre->save();
 
-        return redirect()->to('admin/genres');
+        return redirect()->to('Admin/genres');
     }
 
     public function delete($id){
         $genre = Genre::find($id);
         $genre->delete();
 
-        return redirect()->to('admin/genres');
+        return redirect()->to('Admin/genres');
     }
 }
