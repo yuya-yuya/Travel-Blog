@@ -14,7 +14,7 @@
               <img src="../../img/no_image_post.jpg" width="100px" height="100px">
             @else
               <img src="../../uploads/{{ $cityname->cityname_image }}" width="100px" height="100px" style="display: block; margin: auto;">
-            @enfif
+            @endif
           </div>
           <div class="card-footer">
             <form method="post" action="{{ route('admin.citynames.delete', ['id' => $cityname->id]) }}">

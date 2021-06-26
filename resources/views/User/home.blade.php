@@ -38,10 +38,12 @@
 
   <ul class="card-deck" style="list-style: none;">
     @foreach($genres as $genre)
-      @for ($i = 1; $i < $genre->count(); $i++)
-        $genrecount = 30 * {{ $i }};
-      @endfor
-      <li style="list-style: none; position: absolute; top: 300px; left: 30 px; z-index: 100;">
+    $var: 300px;
+.content {
+    width: calc(100% - #{$var}); /* → width: calc(100% - 300px); */
+}
+    $loop->index
+      <li style="list-style: none; position: absolute; top: 300px; left:calc(calc(1 + #{{$genre}}) * 30px); z-index: 100;">
         <div class="card">
           <div class="card-header"><a href="{{ route('user.posts.genreshow', ['id' => $genre->id]) }}">{{ $genre->name }}</a></div>
           <div class="card-body"> <img src="../../uploads/{{ $genre->image_path }}" width="100px" height="100px"></div>
