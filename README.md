@@ -9,11 +9,19 @@
 <br>
 <br>
 <h1>アプリケーション紹介</h1>
-
+<p>このアプリケーションは管理者側とユーザー側で分離している。</p>
+<br>
+<br>
+<br>
+<br>
+<br>
 <h1>Features</h1>
-
-<img width="864" alt="スクリーンショット 2021-05-20 4 11 06" src="https://user-images.githubusercontent.com/68839987/118870395-79980f80-b921-11eb-9b7b-85e21f7ee627.png">
-
+<img width="500" alt="スクリーンショット 2021-05-20 4 11 06" src="https://user-images.githubusercontent.com/68839987/118870395-79980f80-b921-11eb-9b7b-85e21f7ee627.png">
+<br>
+<br>
+<br>
+<br>
+<br>
 Dependency
 
 - PHP (>= 7.0)
