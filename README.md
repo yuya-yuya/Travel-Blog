@@ -10,6 +10,10 @@
 <br>
 <h1>アプリケーション紹介</h1>
 <p>このアプリケーションは管理者側とユーザー側で分離している。</p>
+<h2>管理者側</h2>
+<div>
+  <h3>管理者トップページ</h3>
+</div>
 <br>
 <br>
 <br>
@@ -23,11 +27,10 @@
 <br>
 <br>
 <h1>Dependency</h1>
-- PHP (>= 7.0)
-- Laravel 6.0
-- MySQL
-- React
-- Bootstrap
+- PHP (>= 7.0)<br>
+- Laravel 6.0<br>
+- MySQL<br>
+- Bootstrap<br>
 - Heroku
 
 
