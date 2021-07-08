@@ -25,10 +25,10 @@
 </div>
 <br>
 <div>
-   <h3>管理者都市名投稿一覧とジャンル一覧</h3>
+   <h3>管理者都市名投稿一覧とジャンル投稿一覧</h3>
    <img width="500" alt="スクリーンショット 2021-07-08 17 08 05" src="https://user-images.githubusercontent.com/68839987/124886405-2b44ea00-e00f-11eb-98b5-d378231b1544.png"><br>
    <img width="500" alt="スクリーンショット 2021-07-08 17 07 58" src="https://user-images.githubusercontent.com/68839987/124886418-2e3fda80-e00f-11eb-9ce6-e589e749c0ca.png">
-   <p>管理者側の都市名とジャンル一覧。また、それぞれの新規追加機能も同ページに実装。ユーザーは管理者が設定した都市名とジャンルから選択し、投稿することとなる。これにより管理者がサイトを管理しやすくなる</p>
+   <p>管理者側の都市名とジャンル一覧。また、それぞれの新規追加機能も同ページに実装。ユーザーは管理者が設定した都市名とジャンルから選択し、投稿することとなる。これにより管理者がサイトを管理しやすくなる。</p>
 </div>
 <br>
 <div>
@@ -93,7 +93,19 @@
 - MySQL<br>
 - Bootstrap<br>
 - Heroku
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Usage</h1>
+- http://laravelmysql.herokuapp.com/ にアクセス
+- デモユーザーでログイン(ヘッダーのハンバーガメニューを開くとログインボタンがあるのでそこからログイン)
+    - Mail: `test@test`
+    - Password: `password`
+- また、管理者でログインするには http://laravelmysql.herokuapp.com/ にアクセスした後にurlに /admin/home をつけてログインページに遷移。
+    - Mail: `test@test`
+    - Password: `password`
 
 
 
