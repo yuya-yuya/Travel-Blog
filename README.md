@@ -42,14 +42,21 @@
    <h3>ユーザートップページ</h3>
    <img width="500" alt="スクリーンショット 2021-07-08 17 27 52" src="https://user-images.githubusercontent.com/68839987/124889387-03a35100-e012-11eb-9ecd-a953411ad0cd.png">
    <p>ユーザー側のトップページ。swiperでスライドを実装。管理者が設定したジャンルから選択。</p>
-</div>br
-<>
+</div>
+<br>
 <div>
    <h3>ユーザー投稿一覧と詳細</h3>
-   <img width="500" alt="スクリーンショット 2021-07-08 17 31 29" src="https://user-images.githubusercontent.com/68839987/124889853-71e81380-e012-11eb-8cd6-b40b97f8801c.png">
+   <img width="500" alt="スクリーンショット 2021-07-08 17 31 29" src="https://user-images.githubusercontent.com/68839987/124889853-71e81380-e012-11eb-8cd6-b40b97f8801c.png"> <br>
    <img width="500" alt="スクリーンショット 2021-07-08 17 31 36" src="https://user-images.githubusercontent.com/68839987/124889874-76acc780-e012-11eb-8bf0-d40a601ce675.png">
    <p>ユーザー側の投稿一覧と詳細。投稿した本人のみ削除が可能。また、詳細画面には返信機能を実装。</p>
 </div>
+<br>
+<div>
+   <h3>ユーザー新規投稿</h3>
+   <img width="500" alt="スクリーンショット 2021-07-08 17 31 36" src="https://user-images.githubusercontent.com/68839987/124890263-d3a87d80-e012-11eb-97ed-6f63557cd7cf.png">
+   <p>ユーザー側の新規投稿画面。アカウントを作成しないと、新規投稿ができない。</p>
+</div>
+<br>
 <br>
 <br>
 <br>
