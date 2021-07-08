@@ -24,6 +24,13 @@
    <p>管理者側のユーザー一覧。管理者特権で全てのユーザーの削除編集権限がある。</p>
 </div>
 <br>
+<div>
+   <h3>管理者トップページ</h3>
+   <img width="379" alt="スクリーンショット 2021-07-08 17 08 05" src="https://user-images.githubusercontent.com/68839987/124886405-2b44ea00-e00f-11eb-98b5-d378231b1544.png">
+   <img width="402" alt="スクリーンショット 2021-07-08 17 07 58" src="https://user-images.githubusercontent.com/68839987/124886418-2e3fda80-e00f-11eb-9ce6-e589e749c0ca.png">
+   <p>管理者側のユーザー一覧。管理者特権で全てのユーザーの削除編集権限がある。</p>
+</div>
+<br>
 <br>
 <br>
 <br>
