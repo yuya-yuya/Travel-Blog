@@ -99,12 +99,12 @@
 <br>
 <br>
 <h1>Usage</h1>
-- http://laravelmysql.herokuapp.com/ にアクセス
-- デモユーザーでログイン(ヘッダーのハンバーガメニューを開くとログインボタンがあるのでそこからログイン)
-    - Mail: `test@test`
-    - Password: `password`
-- また、管理者でログインするには http://laravelmysql.herokuapp.com/ にアクセスした後にurlに /admin/home をつけてログインページに遷移。
-    - Mail: `test@test`
+- http://laravelmysql.herokuapp.com/ にアクセス<br>
+- デモユーザーでログイン(ヘッダーのハンバーガメニューを開くとログインボタンがあるのでそこからログイン)<br>
+    - Mail: `test@test`<br>
+    - Password: `password`<br>
+- また、管理者でログインするには http://laravelmysql.herokuapp.com/ にアクセスした後にurlに /admin/home をつけてログインページに遷移。<br>
+    - Mail: `test@test`<br>
     - Password: `password`
 
 
