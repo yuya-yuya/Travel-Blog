@@ -64,9 +64,16 @@
 </div>
 <br>
 <div>
-   <h3>ユーザ側のユーザー一覧</h3>
-   <img width="500" alt="スクリーンショット 2021-07-08 17 38 31" src="https://user-images.githubusercontent.com/68839987/124890805-60533b80-e013-11eb-93d1-e50e40383c0d.png">
-   <p>ユーザ側のユーザー一覧画面。管理者側とは違い、アカウント作成者本人でないと、編集削除不可。</p>
+   <h3>ユーザ削除確認画面</h3>
+   <img width="500" alt="スクリーンショット 2021-07-08 17 41 07" src="https://user-images.githubusercontent.com/68839987/124891168-b1632f80-e013-11eb-8a16-00777b621f56.png">
+   <p>ユーザ側のユーザー削除確認画面。削除する前に確認を挟むことで誤動作を防止。</p>
+</div>
+<br>
+<div>
+   <h3>ユーザーネームスペース</h3>
+   <img width="500" alt="スクリーンショット 2021-07-08 17 43 54" src="https://user-images.githubusercontent.com/68839987/124891717-33ebef00-e014-11eb-89b8-acce91afaa60.png">
+   320a20f.png">
+   <p>ユーザー側のURLをuserで実装。ユーザー側と管理者側をこれで完全分離。</p>
 </div>
 <br>
 <br>
