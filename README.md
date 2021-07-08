@@ -20,6 +20,8 @@
 <br>
 <div>
    <h3>管理者トップページ</h3>
+   <img width="500" alt="スクリーンショット 2021-07-08 17 05 51" src="https://user-images.githubusercontent.com/68839987/124885977-ca1d1680-e00e-11eb-83af-9f6bf45cfeb4.png">
+   <p>管理者側のユーザー一覧。管理者特権で全てのユーザーの削除編集権限がある。</p>
 </div>
 <br>
 <br>
