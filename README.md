@@ -72,7 +72,6 @@
 <div>
    <h3>ユーザーネームスペース</h3>
    <img width="500" alt="スクリーンショット 2021-07-08 17 43 54" src="https://user-images.githubusercontent.com/68839987/124891717-33ebef00-e014-11eb-89b8-acce91afaa60.png">
-   320a20f.png">
    <p>ユーザー側のURLをuserで実装。ユーザー側と管理者側をこれで完全分離。</p>
 </div>
 <br>
