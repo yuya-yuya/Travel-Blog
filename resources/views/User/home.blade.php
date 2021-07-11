@@ -44,7 +44,13 @@
           <li style="list-style: none; top: 300px; left:30px; z-index: 100;">
             <div class="card">
               <div class="card-header"><a href="{{ route('user.posts.genreshow', ['id' => $genre->id]) }}">{{ $genre->name }}</a></div>
-              <div class="card-body"> <img src="../../uploads/{{ $genre->image_path }}" width="100px" height="100px"></div>
+              <div class="card-body">
+                @if($genre->image_path == Null)
+                  <img src="../../../img/no_image_post.jpg" width="100px" height="100px" style="display: block; margin: auto;">
+                @else
+                  <img src="../../uploads/{{ $genre->image_path }}" width="100px" height="100px">
+                @endif
+              </div>
             </div>
           </li>
         @endforeach
