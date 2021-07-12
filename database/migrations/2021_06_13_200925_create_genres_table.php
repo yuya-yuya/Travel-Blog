@@ -18,7 +18,6 @@ class CreateGenrestable extends Migration
             $table->string('name');
             $table->string('image_path');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

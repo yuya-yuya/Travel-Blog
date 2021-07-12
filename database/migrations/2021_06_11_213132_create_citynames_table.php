@@ -18,7 +18,6 @@ class CreateCitynamesTable extends Migration
             $table->string('name');
             $table->string('cityname_image');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
