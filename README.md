@@ -104,7 +104,8 @@
     - Password: `password`<br>
 - また、管理者でログインするには http://laravelmysql.herokuapp.com/ にアクセスした後にurlに /admin/home をつけてログインページに遷移。<br>
     - Mail: `test@test`<br>
-    - Password: `password`
+    - Password: `password`<br>
+-ユーザー側で新規投稿や投稿一覧やユーザー一覧を閲覧したり、管理者としてジャンルや都市名、ユーザー編集などをしてみてください。
 
 
 
