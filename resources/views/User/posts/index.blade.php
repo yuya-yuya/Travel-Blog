@@ -17,6 +17,7 @@
               <a href="{{ route('user.posts.show', ['id' => $post->id]) }}">
                 <p style="margin-bottom: -10px;">{{ $post->title}}</p>
               </a><br>
+              <p style="font-size: 12px; margin-bottom: -5px;">posted by {{ $post->user->name }}</p>
             </div>
             <div class="card-body" style="width: 300px; height: 300px;">
               @if($post->post_image == Null)
