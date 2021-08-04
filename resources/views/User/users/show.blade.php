@@ -17,7 +17,7 @@
             @if($user->user_image == Null)
               <img src="../../uploads/no_image.jpg" width="100px" height="100px" style="display: block; margin: auto;">
             @else
-              <img src="../../uploads/{{ $user->user_image }}" width="100px" height="100px" style="display: block; margin: auto;">
+              <img src="data:image/png;base64, {{ $user->user_image }}" width="100px" height="100px" style="display: block; margin: auto;">
             @endif
             {{ $user -> introduction}}
           </div>

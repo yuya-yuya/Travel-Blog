@@ -48,7 +48,7 @@
                 @if($genre->image_path == Null)
                   <img src="../../../img/no_image_post.jpg" width="100px" height="100px" style="display: block; margin: auto;">
                 @else
-                  <img src="../../uploads/{{ $genre->image_path }}" width="100px" height="100px">
+                  <img src="data:image/png;base64, {{ $genre->image_path }}" width="100px" height="100px">
                 @endif
               </div>
             </div>

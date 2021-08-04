@@ -18,7 +18,7 @@
             @if($post->post_image == Null)
               <img src="../../img/no_image_post.jpg" width="100px" height="100px" style="display: block; margin: auto;">
             @else
-              <img src="../../uploads/{{ $post->post_image }}" width="100px" height="100px" style="display: block; margin: auto;">
+              <img src="data:image/png;base64, {{ $post->post_image }}" width="100px" height="100px" style="display: block; margin: auto;">
             @endif
             <p class="card-text">{{ $post->body }}</p>
           </div>

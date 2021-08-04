@@ -31,18 +31,19 @@ class UserController extends Controller
     }
 
     public function update(UpdateRequest $request){
-        if ($file = $request->user_image) {
-            $fileName = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName);
-        } else {
-            $fileName = "";
-        }
+        // if ($file = $request->user_image) {
+        //     $fileName = time() . $file->getClientOriginalName();
+        //     $target_path = public_path('uploads/');
+        //     $file->move($target_path, $fileName);
+        // } else {
+        //     $fileName = "";
+        // }
 
 
         $user = Auth::user();
         $user->fill($request->all());
-        $user->user_image = $fileName;
+        // $user->user_image = $fileName;
+        $user->user_image = base64_encode(file_get_contents($request->user_image));
         $user->introduction = $request->introduction;
         $user->save();
        

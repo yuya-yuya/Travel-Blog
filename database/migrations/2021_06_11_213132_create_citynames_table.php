@@ -16,7 +16,7 @@ class CreateCitynamesTable extends Migration
         Schema::create('citynames', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('cityname_image');
+            $table->longText('cityname_image');
             $table->timestamps();
         });
     }

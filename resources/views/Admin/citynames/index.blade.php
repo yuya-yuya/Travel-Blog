@@ -13,7 +13,7 @@
             @if($cityname->cityname_image == Null)
               <img src="../../img/no_image_post.jpg" width="100px" height="100px">
             @else
-              <img src="../../uploads/{{ $cityname->cityname_image }}" width="100px" height="100px" style="display: block; margin: auto;">
+              <img src="data:image/png;base64, {{ $cityname->cityname_image }}" width="100px" height="100px" style="display: block; margin: auto;">
             @endif
           </div>
           <div class="card-footer">

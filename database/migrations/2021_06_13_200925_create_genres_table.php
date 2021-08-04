@@ -16,7 +16,7 @@ class CreateGenrestable extends Migration
         Schema::create('genres', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('image_path');
+            $table->longText('image_path');
             $table->timestamps();
         });
     }

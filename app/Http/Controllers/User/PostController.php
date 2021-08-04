@@ -44,19 +44,20 @@ class PostController extends Controller
             'body' => 'required',
         ]);
 
-        if ($file = $request->post_image) {
-            $fileName = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName);
-        } else {
-            $fileName = "";
-        }
+        // if ($file = $request->post_image) {
+        //     $fileName = time() . $file->getClientOriginalName();
+        //     $target_path = public_path('uploads/');
+        //     $file->move($target_path, $fileName);
+        // } else {
+        //     $fileName = "";
+        // }
 
         $post = new Post;
         $post->fill($request->all());
         $post->cityname_id = $request->cityname_id;
         $post->genre_id = $request->genre_id;
-        $post->post_image = $fileName;
+        // $post->post_image = $fileName;
+        $post->post_image = base64_encode(file_get_contents($request->post_image));
         $post->user()->associate(Auth::user()); 
         $post->save();
 
