@@ -9,14 +9,14 @@ class CreateGenrestable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voidls
      */
     public function up()
     {
         Schema::create('genres', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->binary('image_path');
+            $table->longText('image_path');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateGenrestable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('genres');
     }
 }
