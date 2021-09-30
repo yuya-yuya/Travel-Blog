@@ -2,7 +2,7 @@
 @extends('layouts.user.app')
 
 @section('content')
-  <div class="swiper-container" style="width: 70%; height: 400px; margin-top: -40px; position: relative;">
+  <div class="swiper-container" style="width: 100%; height: 400px; margin-top: -40px; position: relative;">
     <!-- Sliderの内包コンテナ -->
     <div class="swiper-wrapper">
       <!-- Slideさせたいコンテンツ -->
