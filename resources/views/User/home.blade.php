@@ -2,7 +2,7 @@
 @extends('layouts.user.app')
 
 @section('content')
-  <div class="swiper-container" style="width: 100%; height: 400px; margin-top: -40px; position: relative;">
+  <div class="swiper" style="width: 70%; height: 400px; margin-top: -40px; position: relative;">
     <!-- Sliderの内包コンテナ -->
     <div class="swiper-wrapper">
       <!-- Slideさせたいコンテンツ -->
@@ -34,8 +34,6 @@
     <div class="swiper-slide"></div>
     <p style="position: absolute; top: 50px; left: 100px; z-index: 100; font-size: 40px;">あなたの旅を共有しよう</p>
   </div>
-  
-  
 
   <div class="container" style="margin-top: 30px;">
     <div class="row">
@@ -58,11 +56,14 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="{{ asset('js/swiper-bundle.min.js') }}" ></script>
   <script>
-    var mySwiper = new Swiper ('.swiper-container', {
+    var mySwiper = new Swiper ('.swiper', {
       // ここからオプション
       loop: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
       pagination: {
         el: '.swiper-pagination',
       },
